@@ -1,3 +1,12 @@
+"""
+1. Deployed Application Link: https://fake-news-detection-using-deep-learning-xfbxnzfhqwkpq5alx7ppwg.streamlit.app/
+2. Github Code Link: https://github.com/sohail3031/Fake-News-Detection-Using-Deep-Learning
+
+Steps to Run Deployed Application
+1. Upload all the model files
+2. Upload the tokenizer files
+"""
+
 # importing libraies
 import pickle
 import nltk
