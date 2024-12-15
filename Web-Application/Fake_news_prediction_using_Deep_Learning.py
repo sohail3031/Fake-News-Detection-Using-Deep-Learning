@@ -15,10 +15,10 @@ from keras_preprocessing.sequence import pad_sequences
 from keras.models import load_model
 
 # downloading necessary packages
-nltk.download("stopwords", quiet=True)
-nltk.download("punkt", quiet=True)
-nltk.download("wordnet", quiet=True)
-nltk.download('punkt_tab', quiet=True)
+# nltk.download("stopwords", quiet=True)
+# nltk.download("punkt", quiet=True)
+# nltk.download("wordnet", quiet=True)
+# nltk.download('punkt_tab', quiet=True)
 
 # creating stemmer for stemming the text
 stemmer = PorterStemmer()
