@@ -27,9 +27,9 @@ lstm_model_upload = st.file_uploader("Upload LSTM Model", type=["h5"])
 cnn_model_upload = st.file_uploader("Upload CNN Model", type=["h5"])
 cobra_model_upload = st.file_uploader("Upload COBRA Model", type=["h5"])
 
-lstm_token_upload = st.file_uploader("Upload LSTM Token", type=["h5"])
-cnn_token_upload = st.file_uploader("Upload CNN Token", type=["h5"])
-cobra_token_upload = st.file_uploader("Upload COBRA Token", type=["h5"])
+lstm_token_upload = st.file_uploader("Upload LSTM Token", type=["pkl"])
+cnn_token_upload = st.file_uploader("Upload CNN Token", type=["pkl"])
+cobra_token_upload = st.file_uploader("Upload COBRA Token", type=["pkl"])
 
 if lstm_model_upload is not None and cnn_model_upload is not None and cobra_model_upload is not None and lstm_token_upload is not None and cnn_token_upload is not None and cobra_token_upload is not None:
     # loading models
