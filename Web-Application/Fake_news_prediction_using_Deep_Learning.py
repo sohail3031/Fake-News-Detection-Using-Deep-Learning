@@ -24,18 +24,18 @@ nltk.download('punkt_tab', quiet=True)
 stemmer = PorterStemmer()
 
 # loading models
-lstm_model = load_model(os.path.abspath("models/lstm_model.h5"))
-cnn_model = load_model(os.path.abspath("models/cnn_model.h5"))
-cobra_model = load_model(os.path.abspath("models/cobra_model.h5"))
+lstm_model = load_model(os.path.abspath("lstm_model.h5"))
+cnn_model = load_model(os.path.abspath("cnn_model.h5"))
+cobra_model = load_model(os.path.abspath("cobra_model.h5"))
 
 # loading tokenizer of each model
-with open(os.path.abspath("models/lstm_tokenizer.pkl"), "rb") as handle:
+with open(os.path.abspath("lstm_tokenizer.pkl"), "rb") as handle:
     lstm_tokenizer = pickle.load(handle)
 
-with open(os.path.abspath("models/cnn_tokenizer.pkl"), "rb") as handle:
+with open(os.path.abspath("cnn_tokenizer.pkl"), "rb") as handle:
     cnn_tokenizer = pickle.load(handle)
 
-with open(os.path.abspath("models/cobra_tokenizer.pkl"), "rb") as handle:
+with open(os.path.abspath("cobra_tokenizer.pkl"), "rb") as handle:
     cobra_tokenizer = pickle.load(handle)
 
 
