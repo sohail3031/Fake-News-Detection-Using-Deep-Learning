@@ -15,27 +15,27 @@ from keras_preprocessing.sequence import pad_sequences
 from keras.models import load_model
 
 # downloading necessary packages
-# nltk.download("stopwords", quiet=True)
-# nltk.download("punkt", quiet=True)
-# nltk.download("wordnet", quiet=True)
-# nltk.download('punkt_tab', quiet=True)
+nltk.download("stopwords", quiet=True)
+nltk.download("punkt", quiet=True)
+nltk.download("wordnet", quiet=True)
+nltk.download('punkt_tab', quiet=True)
 
 # creating stemmer for stemming the text
 stemmer = PorterStemmer()
 
 # loading models
-lstm_model = load_model(os.path.abspath("models/lstm_model.h5"))
-cnn_model = load_model(os.path.abspath("models/cnn_model.h5"))
-cobra_model = load_model(os.path.abspath("models/cobra_model.h5"))
+lstm_model = load_model("./models/lstm_model.h5")
+cnn_model = load_model("./models/cnn_model.h5")
+cobra_model = load_model("./models/cobra_model.h5")
 
 # loading tokenizer of each model
-with open(os.path.abspath("models/lstm_tokenizer.pkl"), "rb") as handle:
+with open("./models/lstm_tokenizer.pkl", "rb") as handle:
     lstm_tokenizer = pickle.load(handle)
 
-with open(os.path.abspath("models/cnn_tokenizer.pkl"), "rb") as handle:
+with open("./models/cnn_tokenizer.pkl", "rb") as handle:
     cnn_tokenizer = pickle.load(handle)
 
-with open(os.path.abspath("models/cobra_tokenizer.pkl"), "rb") as handle:
+with open("./models/cobra_tokenizer.pkl", "rb") as handle:
     cobra_tokenizer = pickle.load(handle)
 
 
