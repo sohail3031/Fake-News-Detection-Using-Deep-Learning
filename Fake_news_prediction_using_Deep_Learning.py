@@ -42,19 +42,22 @@ if lstm_model_upload is not None and cnn_model_upload is not None and cobra_mode
     with open("cobra_model.h5", "wb") as m3:
         m3.write(lstm_model_upload.getbuffer())
 
-    lstm_model = load_model("models/lstm_model.h5")
-    cnn_model = load_model("models/cnn_model.h5")
-    cobra_model = load_model("models/cobra_model.h5")
+    lstm_model = load_model("lstm_model.h5")
+    cnn_model = load_model("cnn_model.h5")
+    cobra_model = load_model("cobra_model.h5")
 
     # loading tokenizer of each model
-    with open("models/lstm_tokenizer.pkl", "rb") as handle:
-        lstm_tokenizer = pickle.load(handle)
+    lstm_tokenizer = pickle.load(lstm_token_upload)
+    cnn_tokenizer = pickle.load(cnn_token_upload)
+    cobra_tokenizer = pickle.load(cobra_token_upload)
+    # with open("models/lstm_tokenizer.pkl", "rb") as handle:
+    #     lstm_tokenizer = pickle.load(handle)
 
-    with open("models/cnn_tokenizer.pkl", "rb") as handle:
-        cnn_tokenizer = pickle.load(handle)
+    # with open("models/cnn_tokenizer.pkl", "rb") as handle:
+    #     cnn_tokenizer = pickle.load(handle)
 
-    with open("models/cobra_tokenizer.pkl", "rb") as handle:
-        cobra_tokenizer = pickle.load(handle)
+    # with open("models/cobra_tokenizer.pkl", "rb") as handle:
+    #     cobra_tokenizer = pickle.load(handle)
 
 
     # function to remove punctuations from the text
