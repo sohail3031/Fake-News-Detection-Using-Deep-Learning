@@ -24,21 +24,21 @@ nltk.download('punkt_tab', quiet=True)
 stemmer = PorterStemmer()
 
 # uploading files
-lstm_model_upload = st.file_uploader("Choose LSTM Model", type=["h5"])
-cnn_model_upload = st.file_uploader("Choose CNN Model", type=["h5"])
-cobra_model_upload = st.file_uploader("Choose COBRA Model", type=["h5"])
-lstm_token_upload = st.file_uploader("Choose LSTM Tokens", type=["pkl"])
-cnn_token_upload = st.file_uploader("Choose CNN Tokens", type=["pkl"])
-cobra_token_upload = st.file_uploader("Choose COBRA Tokens", type=["pkl"])
+# lstm_model_upload = st.file_uploader("Choose LSTM Model", type=["h5"])
+# cnn_model_upload = st.file_uploader("Choose CNN Model", type=["h5"])
+# cobra_model_upload = st.file_uploader("Choose COBRA Model", type=["h5"])
+# lstm_token_upload = st.file_uploader("Choose LSTM Tokens", type=["pkl"])
+# cnn_token_upload = st.file_uploader("Choose CNN Tokens", type=["pkl"])
+# cobra_token_upload = st.file_uploader("Choose COBRA Tokens", type=["pkl"])
 
 # loading models
 # lstm_model = load_model(os.path.abspath("models/lstm_model.h5"))
 # cnn_model = load_model(os.path.abspath("models/cnn_model.h5"))
 # cobra_model = load_model(os.path.abspath("models/cobra_model.h5"))
 
-lstm_model = load_model(lstm_model_upload)
-cnn_model = load_model(cnn_model_upload)
-cobra_model = load_model(cobra_model_upload)
+lstm_model = load_model(pickle.load(open("models/lstm_model.h5")))
+cnn_model = load_model(pickle.load(open("models/cnn_model.h5")))
+cobra_model = load_model(pickle.load(open("models/cobra_model.h5")))
 
 # loading tokenizer of each model
 # with open(os.path.abspath("models/lstm_tokenizer.pkl"), "rb") as handle:
@@ -50,13 +50,13 @@ cobra_model = load_model(cobra_model_upload)
 # with open(os.path.abspath("models/cobra_tokenizer.pkl"), "rb") as handle:
 #     cobra_tokenizer = pickle.load(handle)
 
-with open(lstm_token_upload, "rb") as handle:
+with open(pickle.load(open("models/lstm_tokenizer.pkl")), "rb") as handle:
     lstm_tokenizer = pickle.load(handle)
 
-with open(cnn_token_upload, "rb") as handle:
+with open(pickle.load(open("models/cnn_tokenizer.pkl")), "rb") as handle:
     cnn_tokenizer = pickle.load(handle)
 
-with open(cobra_token_upload, "rb") as handle:
+with open(pickle.load(open("models/cobra_tokenizer.pkl")), "rb") as handle:
     cobra_tokenizer = pickle.load(handle)
 
 
