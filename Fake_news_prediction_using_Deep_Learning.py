@@ -5,6 +5,11 @@
 Steps to Run Deployed Application
 1. Upload all the model files
 2. Upload the tokenizer files
+
+Steps to Run Web Application Locally:
+1. Open a terminal
+2. Run the following command to run the application locally
+3. Command: streamlit run Fake_news_prediction_using_Deep_Learning.py
 """
 
 # importing libraies
@@ -21,6 +26,20 @@ from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 from keras_preprocessing.sequence import pad_sequences
 from keras.models import load_model
+
+st.set_page_config(page_title="Fake News Prediction", initial_sidebar_state="expanded", page_icon="📰")
+st.markdown("""
+    <style>
+        body {
+            background-color: #ea925d;
+            color: #000000;
+        }
+        
+        .stApp {
+            background-color: #ea925d;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
 # downloading necessary packages
 nltk.download("stopwords", quiet=True)
